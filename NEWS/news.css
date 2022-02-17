@@ -1,0 +1,17 @@
+#menuL{
+    width: 23%;
+    height: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    background-color: rosybrown;
+    position: fixed;
+    display: inline;
+    
+  }
+.menuCorp{
+    width: 74%;
+    padding-top: 5%;
+    margin-left: 25%;
+    background-color: tomato;
+    text-align: center;
+  }
