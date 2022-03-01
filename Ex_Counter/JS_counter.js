@@ -1,25 +1,28 @@
 function add_F(){
     var value = parseInt(document.getElementById("my_p").textContent);
     value = value + 1;
-    document.getElementById("my_p").textContent = value;
+    document.getElementById("my_p").textContent = value
+    if(value > "0"){
+        document.getElementById("my_p").style.color= "#02df14";
+    }
+    else if(value == "0"){
+        document.getElementById("my_p").style.color = "#FFFFFF";
+    }
 }
 
 function decrease_F(){
     var valueD = parseInt(document.getElementById("my_p").textContent);
     valueD = valueD - 1;
-    document.getElementById("my_p").textContent = valueD;
+    document.getElementById("my_p").textContent = valueD
+    if(valueD < "0"){
+        document.getElementById("my_p").style.color= "#df0202";
+    }
+    else if(valueD == "0"){
+        document.getElementById("my_p").style.color = "#FFFFFF";
+    }
 }
 
 function reset_F(){
     document.getElementById("my_p").innerHTML="0"
-}
-
-if(add_F > 0){
-    document.getElementById("my_p").style.color = green;
-}
-else if(decrease_F < 0){
-    document.getElementById("my_p").style.color = red;
-}
-else{
-    document.getElementById("my_p").style.color = white;
+    document.getElementById("my_p").style.color = "#FFFFFF";
 }

@@ -52,7 +52,7 @@ p{
     cursor: pointer;
     color: rgb(255, 255, 255);
     border: 4px solid rgb(41, 250, 180);
-    background-color: rgba(41, 250, 180, 0.2);
+    background-color: rgba(41, 250, 180, 0.335);
 }
 
 button.reset{
