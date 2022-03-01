@@ -1,0 +1,60 @@
+body{
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: grid;
+    place-items: center;
+}
+
+h1{
+    color:rgb(41, 250, 180);
+    font-family: 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+p{
+    font-family: 'Trebuchet MS' 'light';
+    font-size: 40px;
+    color:azure; 
+    text-align: center;
+}
+
+.containerOne{
+    width: 50vmin;
+    background-color: rgba(240, 248, 255, 0.26);
+    padding: 5px 5px;
+    border-radius: 10px;
+    box-shadow: 5px 5px rgba(150, 147, 147, 0.2);
+}
+
+.container{
+    width: 50%;
+    background-color: rgba(196, 250, 241, 0.26);
+    padding: 5px 5px;
+    border-radius: 10px;
+    box-shadow: 5px 5px rgba(125, 156, 152, 0.2);
+    margin-top: 0%;
+}
+
+.btns{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 9%;
+}
+
+.btns button{
+    width: 100px;
+    padding: 15px 0;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    border: 4px solid rgb(41, 250, 180);
+    background-color: rgba(41, 250, 180, 0.2);
+}
+
+button.reset{
+    background-color: transparent;
+}
