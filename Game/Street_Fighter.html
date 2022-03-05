@@ -4,12 +4,10 @@
     </head>
 
     <body>
-        <div id="playerB">
-            <div>
-                <h2> Player 1 </h2></div>
-                <div><h2> Player 2 </h2></div>
-            </div>
-
+        <div class="players">
+            <div id="p1"><h2> Player 1 </h2></div>
+            <div id="p2"><h2> Player 2 </h2></div>
+        </div>
         
         <div>
             
@@ -17,20 +15,32 @@
                 
                 <div id="healthBar">
                     <div id=myHealth1><strong> Health </strong></div>
-                    <button onclick="hit1()"> Attack </button>
-                    <button onclick="heal1()"> Heal </button>
+                    <div class="btns">
+                        <button onclick="hit1()"><strong>Attack</strong></button>
+                        <button onclick="hitS1()"><strong> Super Attack </strong></button>
+                        <button onclick="heal1()"><strong> Heal </strong></button>
+                    </div>
+                    <div>
+                        <button id="btn1" onclick="pName1()"> Enter Your Name</button>
+                    </div>
+                    <div><img id="boneco1" src="Image/ryu-street-fighter.png"></div>
                 </div>
+                
         
             <div id="healthBar">
                 <div id=myHealth2><strong> Health </strong></div>
-                <button onclick="hit2()"> Attack </button>
-                <button onclick="heal2()"> Heal </button>
+                <div class="btns">
+                    <button onclick="hit2()"><strong>Attack</strong></button>
+                    <button onclick="hitS2()"><strong> Super Attack </strong></button>
+                    <button onclick="heal2()"><strong> Heal </strong></button>
+                </div>
+                <div>
+                    <button id="btn1" onclick="pName2()"> Enter Your Name</button>
+                </div>
+                <div><img id="boneco2" src="Image/dhalsim-street-fighter.png"></div>
             </div>
-
         </div>
-    
-    <!--<img id="boneco" src="Image/ryu-street-fighter.png">-->
-
+        
     <script src="JS_Street_Fighter.js"></script>
 </body>
 </html>
