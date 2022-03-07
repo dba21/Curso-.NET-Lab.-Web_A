@@ -20,12 +20,12 @@ body{
     background: url("coffee-img-1.svg"), url("coffee-img-2.svg");
     background-position: 0 0, 0 0;
     background-repeat: repeat-x;
-    animation: coffee 4s infinite linear;
+    animation: coffee 15s infinite linear;
 }
 
 @keyframes coffee{
     100%{
-        background-position: -100% 0, -100% 0;
+        background-position: 130% 0, 130% 0;
     }
 }
 
