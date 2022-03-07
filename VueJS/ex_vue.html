@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="https://unpkg.com/vue-router@2.0.0"></script>
+</head>
+
+<body>
+    <!--Exercicios da aula VueJS-->
+    <div id="app">
+        {{message}}
+        <input v-model="message">
+        <br>
+        <br>
+        {{message2}}
+        <input v-model="message2">
+        <br>
+        <br>
+        <button @click="count++"> Count is: {{count}}</button>
+        <br>
+        <br>
+        <button @click="increment()"> Count is: {{count2}}</button>
+
+        <br>
+        <br>
+        <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+        <label for="jack"> Jack </label>
+        <br>
+        <input type="checkbox" id="john" value="John" v-model="checkedNames">
+        <label for="john"> John </label>
+        <br>
+        <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+        <label for="mike"> Mike </label>
+        <br>
+        <span>Checked names: {{checkedNames}}</span>
+        <br>
+        <br>
+        <input type="radio" id="one" value="One" v-model="picked">
+        <label for="one"> One </label>
+        <br>
+        <input type="radio" id="two" value="Two" v-model="picked">
+        <label for="two"> Two </label>
+        <br>
+        <span> Picked: {{picked}} </span>
+        <br>
+        <br>
+        <select v-model="selected">
+            <option disabled value=" "> Please select one </option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <span> Selected: {{selected}} </span>
+        <br>
+        <br>
+        <ul>
+            <li v-for="(item, index) in items">
+                {{ parentMessage }} - {{ index }} - {{item.message}}
+            </li>
+        </ul>
+        <br>
+        <br>
+        <li v-for="aluno in alunos">{{aluno}} </li>
+        <br>
+        <li v-for="elemento in turma">{{elemento.nome}} </li>
+        <br>
+        <br>
+        <ul>
+            <li v-for="n in countdown">{{n}}</li>
+        </ul>
+        <br>
+        <br>
+        <ul>
+            <li v-for="(fruit, i) in fruits">{{i}} - {{fruit}}</li>
+        </ul>
+        <br>
+        <br>
+        <ul>
+            <li v-for="(value, key, index) in profile">{{key}} - {{value}}</li>
+        </ul>
+        <br>
+        <br>
+        <div v-if="count3 > 10">
+            Count is greater than 10.
+        </div>
+        <div v-else if="count3 == 10">
+            Count is 10.
+        </div>
+        <div v-else>
+            Count is less than 10.
+        </div>
+        <br>
+        <br>
+        <h3>Using v-show directive</h3>
+        <div v-show="count4 > 10">
+            Count is greater than 10.
+        </div>
+        <div v-show="count4 == 10">
+            Count is 10.
+        </div>
+        <div v-show>
+            Count is less than 10.
+        </div>
+        <br>
+        <br>
+        <h2>{{count5}}</h2>
+        <button v-on:click="count5 += 1">Increase</button>
+        <button v-on:click="count5 -= 1">Decrease</button>
+        <br>
+        <br>
+        <h2>Greet</h2>
+        <button v-on:click="greet('Hello')">Say Hello</button>
+        <button v-on:click="greet('Hi')">Say Hi</button>
+        <button v-on:click="greet('Namaste')">Say Nameste</button>
+        <br><br>
+        {{greeting}}
+        <br>
+        <br>
+        <label>Type your name: </label>
+        <input type="text" v-model="nam" />
+        <br><br>
+        Your name is {{nam}}
+        And is {{charcount}} characters long.
+    </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue.js!',
+                message2: 'segunda variavel',
+                count: 0,
+                count2: 0,
+                checkedNames: [],
+                picked: "",
+                selected: "",
+                parentMessage: "Parent",
+                items: [
+                    { message: "Foo" },
+                    { message: "Bar" },
+                    { message: "Hood" },
+                ],
+                alunos: ["Ana", "Marta", "Rui", "Pedro"],
+                turma: [
+                    { nome: "Ana", id: 4, cruso: "informatica" },
+                    { nome: "Rui", id: 2, curso: "Piscologia" },
+                ],
+                countdown: [5, 4, 3, 2, 1],
+                fruits: ["Apple", "Banana", "Orange", "Mango", "Grapes"],
+                profile: {
+                    name: "Tushar",
+                    age: "31",
+                    degree: "Masters",
+                    position: "Full Stack Developer",
+                },
+                count3: 10,
+                count4: 17,
+                count5: 0,
+                greeting: "",
+                nam: "",
+
+            },
+
+            methods: {
+                greet: function (greeting) {
+                    this.greeting = greeting + ", How are you?";
+                },
+                increment() {
+                    this.count2++;
+                },
+            },
+
+            computed: {
+                charcount: function () {
+                    return this.nam.length;
+                },
+            },
+
+
+        });
+
+
+    </script>
+</body>
+
+</html>
