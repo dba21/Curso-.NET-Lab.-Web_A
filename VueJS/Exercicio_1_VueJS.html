@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="https://unpkg.com/vue-router@2.0.0"></script>
+    <title>Exercício 1, Aula Vue JS</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>Contact US</h2>
+        <span>Name</span>
+        <br>
+        <input v-model="name" placeholder="Name">
+        <br>
+        <span>Email Address</span>
+        <br>
+        <input v-model="email" placeholder="email@mail.com">
+        <br>
+        <span>Gender</span>
+        <br>
+        <input type="radio" id="male" value="Male" v-model="gender">
+        <label for="male">Male</label>
+        <input type="radio" id="female" value="Female" v-model="gender">
+        <label for="female">Female</label>
+        <br>
+        <span>From where did you hear about us?</span>
+        <br>
+        <input v-model="question">
+        <br>
+        <span>You are a:</span>
+        <br>
+        <select v-model="profession">
+            <option>Developer</option>
+            <option>Graphic Designer</option>
+            <option>Manager</option>
+            <option>Company Head/CEO</option>
+            <option>Data Engineer</option>
+            <option>Java Software Engineer</option>
+        </select>
+        <br>
+        <span>Which of our service are you interested in?</span>
+        <br>
+        <input type="checkbox" id="onlineT" value="OnlineT" v-model="interested">
+        <label for="onlineT"> Online Tests </label>
+        <input type="checkbox" id="paperBT" value="PaperBT" v-model="interested">
+        <label for="paperBT"> Paper Based Tests </label>
+        <input type="checkbox" id="customizedT" value="CustomizedT" v-model="interested">
+        <label for="customizedT"> Customized Tests </label>
+        <br>
+        <span>Your message</span>
+        <br>
+        <textarea v-model="message"></textarea>
+        <br>
+        <span>How satisfied are you with our service?</span>
+        <br>
+        <input type="range" v-model="satisfaction" max="10">
+        <br>
+        <input type="checkbox" id="agreeTC" value="AgreeTC" v-model="agree">
+        <label for="agreeTC">Agree to Terms & Conditions</label>
+        <br>
+        <button v-on:click="submit" @click="review()" type="submit" id="submit" v-model="submit"
+            value="submit">Submit</button>
+        <span>{{sent}}</span>
+        <br>
+        <div v-if="review == true">
+            <span>Review your message</span>
+            <li>Name: {{name}}</li>
+            <li>Email: {{email}}</li>
+            <li>Gender: {{gender}}</li>
+            <li>Refer: {{question}}</li>
+            <li>Profession: {{profession}}</li>
+            <li>Message: {{message}}</li>
+            <li>Satisfaction: {{satisfaction}}</li>
+            <li>Interested: {{interested}}</li>
+            <li>Terms: {{agree}}</li>
+        </div>
+
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                name: "",
+                email: "",
+                gender: "",
+                question: "",
+                profession: "",
+                interested: [],
+                message: "",
+                satisfaction: 0,
+                sent: "",
+                agree: "",
+                review: false,
+
+            },
+            methods: {
+                submit: function (sent) {
+                    this.sent = "Message sent successfully.";
+                    this.review = true;
+                }
+            },
+
+        });
+    </script>
+</body>
+
+</html>
