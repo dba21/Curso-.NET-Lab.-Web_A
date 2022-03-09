@@ -1,0 +1,13 @@
+body{
+    background-color: aquamarine;
+}
+.sList{
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10px;
+    height: 5em;
+}
+
+.table{
+    background-color: aquamarine;
+}
