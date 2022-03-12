@@ -1,0 +1,46 @@
+﻿@using Ficha_10.Models
+
+    @model Characters;
+    
+    @{
+        ViewData["Title"] = "MVC_";
+    }
+    <div>
+    <ul>
+        @foreach (var item in Model.CharactersL)
+        {
+            <li>
+                @Html.DisplayFor(modelItem => item.Id)
+                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Gender)
+                @Html.DisplayFor(modelItem => item.Homeworld)
+                @Html.DisplayFor(modelItem => item.Born)
+                @* @Html.DisplayFor(modelItem => item.Jedi) *@
+
+                @Html.CheckBoxFor(modelItem => item.Jedi)
+
+                @Html.ActionLink("Edit", "Edit", new {id = item.Id})
+                @Html.ActionLink("Delete", "Delete", new {id = item.Id})
+                @Html.ActionLink("Details", "Details", new {id = item.Id})
+            </li>
+        }
+    </ul>
+</div>
+<div>
+    <ul>
+        @foreach (var item in Model.EmployeesL)
+        {
+            <li>
+                @Html.DisplayFor(modelItem => item.UserId)
+                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Gender)
+                @Html.DisplayFor(modelItem => item.Homeworld)
+                @Html.DisplayFor(modelItem => item.Born)
+
+                @Html.ActionLink("Edit", "Edit", new {id = item.Id})
+                @Html.ActionLink("Delete", "Delete", new {id = item.Id})
+                @Html.ActionLink("Details", "Details", new {id = item.Id})
+            </li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "MVC_/1.0.0": {
+        "dependencies": {
+          "NuGet.Frameworks": "6.1.0"
+        },
+        "runtime": {
+          "MVC_.dll": {}
+        }
+      },
+      "NuGet.Frameworks/6.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/NuGet.Frameworks.dll": {
+            "assemblyVersion": "6.1.0.106",
+            "fileVersion": "6.1.0.106"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MVC_/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NuGet.Frameworks/6.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-koaAF1Uoocky37pffe9CK3gowq4iZtusAmsl2hSV6fRv0Pmq0ik9ncAAbiMCCuycqsd9jO6HHBwzTEH9m8wusg==",
+      "path": "nuget.frameworks/6.1.0",
+      "hashPath": "nuget.frameworks.6.1.0.nupkg.sha512"
+    }
+  }
+}
