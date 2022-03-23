@@ -17,31 +17,34 @@
 </head>
 
 <body>
-    <div id="app">
+    <div class="container">
 
-        <h2>Shopping List</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Item</th>
-                    <th scope="col">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="item in list">
-                    <td>{{ itemP.quantity }}</td>
-                    <td>{{ itemP.name }}</td>
-                    <td>
-                        <button @click="edit(item)" class="btn btn-info">Edit</button>
-                        <button @click="remove(item)" class="btn btn-danger">Delete</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
 
-        <h3>Add new item</h3>
-        <div class="sList">
+        <div id="app">
+
+            <h2>Shopping List</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in list">
+                        <td>{{ itemP.quantity }}</td>
+                        <td>{{ itemP.name }}</td>
+                        <td>
+                            <button click="edit(item)" class="btn btn-info">Edit</button>
+                            <button click="remove(item)" class="btn btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Add new item</h3>
+            <div class="sList">
                 <div>
                     <label>Quantity</label>
                     <input type="number" v-model="itemP.quantity">
@@ -50,54 +53,11 @@
                     <label>Name</label>
                     <input v-model="itemP.name">
                 </div>
-                <button class="mt-3 mb-3 btn btn-primary" @click="add()">Add</button>
+                <button class="mt-3 mb-3 btn btn-primary" click="add()">Add</button>
+            </div>
         </div>
     </div>
-
-    <script>
-        new Vue({
-            el: "#app",
-            data: {
-                itemP: {
-                    quantity: null,
-                    name: null,
-                },
-                index: null,
-                list: []
-            },
-
-            mounted() {
-                const itemPs = JSON.parse(localStorage.getItem("itemP"))
-                this.list = itemPs ? itemPs : []
-            },
-
-            methods: {
-                add() {
-                    if (this.itemP.id === 0) {
-                        this.itemP.id = this.list.length + 1
-                        this.list.push(this.itemP)
-                    }
-                    else {
-                        this.list[this.index] = this.itemP
-                    }
-                    localStorage.setItem("itemP", JSON.stringify(this.list))
-                    this.itemP = { quantity: null, name: null }
-                },
-
-                remove(item) {
-                    const idx = this.list.indexOf(item)
-                    this.list.splice(idx, 1)
-                    localStorage.setItem("itemP", JSON.stringify(this.list))
-                },
-
-                edit(item) {
-                    this.index = this.list.indexOf(item)
-                    this.itemP = Object.assign({}, item);
-                    localStorage.setItem("itemP", JSON.stringify(this.list))
-                }
-            },
-        });
-    </script>
+    <script src="JS_shopping_List.js "></script>
 </body>
 
 </html>
